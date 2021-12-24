@@ -93,29 +93,31 @@ function Index() {
         setFieldValue,
       }) => {
         return (
-          <form className="formContainer" onSubmit={handleSubmit}>
-            <h1 className="formTitle">Add Mentor</h1>
+          <div className="formWrapper">
+            <form className="formContainer" onSubmit={handleSubmit}>
+              <h1 className="formTitle">Add Mentor</h1>
 
-            {INPUTS.map((input, index) => (
-              <InputField
-                input={input}
-                type={input.type}
-                name={input.name}
-                label={input.label}
-                onChange={handleChange}
-                OnBlur={handleBlur}
-                value={values[input.name]}
-                error={touched[input.name] && errors[input.name]}
-                onBlur={handleBlur}
-                key={index}
-                helperText={touched[input.name] ? errors[input.name] : ""}
-                setFieldValue={setFieldValue}
-              />
-            ))}
-            <Button variant="contained" type="submit">
-              Submit
-            </Button>
-          </form>
+              {INPUTS.map((input, index) => (
+                <InputField
+                  input={input}
+                  type={input.type}
+                  name={input.name}
+                  label={input.label}
+                  onChange={handleChange}
+                  OnBlur={handleBlur}
+                  value={values[input.name]}
+                  error={touched[input.name] && errors[input.name]}
+                  onBlur={handleBlur}
+                  key={index}
+                  helperText={touched[input.name] ? errors[input.name] : ""}
+                  setFieldValue={setFieldValue}
+                />
+              ))}
+              <Button variant="contained" type="submit">
+                Submit
+              </Button>
+            </form>
+          </div>
         );
       }}
     </Formik>

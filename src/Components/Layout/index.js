@@ -5,10 +5,10 @@ import Routers from "../../Routers";
 
 function index() {
   return (
-    <div>
+    <>
       <Header />
       <Routers />
-    </div>
+    </>
   );
 }
 

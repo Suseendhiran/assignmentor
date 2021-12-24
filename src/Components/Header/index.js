@@ -14,6 +14,7 @@ function index() {
       <nav className="headerContainer">
         {links.map((link) => (
           <Link
+            className="links"
             getProps={({ isCurrent }) => {
               return {
                 style: {

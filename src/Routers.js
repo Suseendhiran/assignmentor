@@ -7,7 +7,7 @@ import AddStudentsToMentor from "./Components/AddStudentsToMentor";
 
 function Routers() {
   return (
-    <Router>
+    <Router className="router">
       <Redirect from="/" to="/addmentor" />
       <AddStudent path="/addstudent" />
       <AddMentor path="/addmentor" />

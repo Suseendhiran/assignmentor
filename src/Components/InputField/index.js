@@ -24,7 +24,7 @@ function index({
     case "select":
       inputElement = (
         <>
-          <FormControl fullWidth error={rest.error}>
+          <FormControl error={rest.error}>
             <InputLabel id="demo-simple-select-label">{label}</InputLabel>
             <Select
               sx={{ textAlign: "left" }}
@@ -46,7 +46,7 @@ function index({
       break;
     case "multiSelect":
       inputElement = (
-        <FormControl fullWidth error={rest.error}>
+        <FormControl error={rest.error}>
           <InputLabel id="demo-simple-select-label">{label}</InputLabel>
           <Select
             sx={{ textAlign: "left" }}
