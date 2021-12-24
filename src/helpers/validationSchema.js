@@ -28,7 +28,10 @@ const addStudentMentorSchema = yup.object().shape({
 
 const addStudentsToMentorSchema = yup.object().shape({
   mentorId: yup.string().required("Student is Required"),
-  studentIds: yup.array().min(1).required("Mentor is Required"),
+  studentIds: yup
+    .array()
+    .min(1, "Minimum one student required")
+    .required("Mentor is Required"),
 });
 
 export {
