@@ -60,13 +60,16 @@ body {
   top: 0;
   left: 0;
   background-color: #383937;
+  box-shadow: 10px 1px 62px -14px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 1px 62px -14px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 1px 62px -14px rgba(0, 0, 0, 0.75);
 }
 .headerContainer a {
   color: white;
   text-decoration: none;
 }
 .formWrapper {
-  padding-top: 60px;
+  padding-top: 120px;
 }
 .formContainer {
   display: flex;
