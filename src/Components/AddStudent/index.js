@@ -95,7 +95,7 @@ function Index() {
               />
             ))}
             <Button variant="contained" type="submit">
-              Contained
+              Submit
             </Button>
           </form>
         );

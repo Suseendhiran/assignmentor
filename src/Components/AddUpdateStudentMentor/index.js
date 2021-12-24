@@ -105,7 +105,7 @@ function Index() {
       }) => {
         return (
           <form className="formContainer" onSubmit={handleSubmit}>
-            <h1 className="formTitle">Add Student</h1>
+            <h1 className="formTitle">Assign Mentor</h1>
 
             {INPUTS.map((input, index) => (
               <InputField

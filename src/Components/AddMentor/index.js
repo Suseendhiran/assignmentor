@@ -22,15 +22,6 @@ function Index() {
       label: "Age",
     },
     {
-      name: "gender",
-      type: "select",
-      label: "Gender",
-      options: [
-        { label: "Male", value: "male" },
-        { label: "Female", value: "female" },
-      ],
-    },
-    {
       name: "skills",
       type: "multiSelect",
       label: "skills",
@@ -39,8 +30,23 @@ function Index() {
         { label: "Python", value: "python" },
         { label: "React js", value: "reactJs" },
         { label: "Node js", value: "nodejs" },
+        { label: "AWS", value: "aws" },
+        { label: "Cloud Computing", value: "cloudComputing" },
+        { label: "SEO", value: "seo" },
+        { label: "Digital Marketing", value: "digitalMarketing" },
+        { label: "Mobile App Development", value: "mobileAppDevelopment" },
       ],
     },
+    {
+      name: "gender",
+      type: "select",
+      label: "Gender",
+      options: [
+        { label: "Male", value: "male" },
+        { label: "Female", value: "female" },
+      ],
+    },
+
     {
       name: "collegeName",
       type: "text",
@@ -107,7 +113,7 @@ function Index() {
               />
             ))}
             <Button variant="contained" type="submit">
-              Contained
+              Submit
             </Button>
           </form>
         );
