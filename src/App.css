@@ -67,6 +67,7 @@ body {
 .headerContainer a {
   color: white;
   text-decoration: none;
+  transition: all 0.5s;
 }
 .formWrapper {
   padding-top: 120px;
