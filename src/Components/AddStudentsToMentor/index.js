@@ -26,15 +26,16 @@ function Index() {
       }),
     },
     {
-      name: "studentIds",
+      name: "students",
       type: "multiSelect",
-      label: "Select Students",
+      label: "Students",
       options: students.map((student) => {
         return {
           value: student._id,
           label: student.name,
         };
       }),
+      note: "List contains students without mentor",
     },
   ];
   const getStudents = async () => {
@@ -66,9 +67,14 @@ function Index() {
       });
   };
   const handleSubmit = async (values, resetForm) => {
+    const payload = {
+      ...values,
+      studentIds: values.students.map((student) => student.value),
+    };
+    delete payload.students;
     setLoading(true);
     await axios
-      .put("/mentors/addstudents", { ...values })
+      .put("/mentors/addstudents", { ...payload })
       .then((res) => {
         setLoading(false);
         addToast(res.data.message, { appearance: "success" });
@@ -79,6 +85,7 @@ function Index() {
         setLoading(false);
         addToast(err.data.message, { appearance: "error" });
       });
+    resetForm();
   };
 
   useEffect(() => {
@@ -90,7 +97,7 @@ function Index() {
     <Formik
       initialValues={{
         mentorId: "",
-        studentIds: [],
+        students: [],
       }}
       enableReinitialize={true}
       validationSchema={addStudentsToMentorSchema}
@@ -107,6 +114,7 @@ function Index() {
         touched,
         setFieldValue,
       }) => {
+        console.log("errors", errors);
         return (
           <div className="formWrapper">
             <form className="formContainer" onSubmit={handleSubmit}>

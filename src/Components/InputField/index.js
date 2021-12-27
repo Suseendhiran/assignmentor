@@ -5,21 +5,24 @@ import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
 import { Select } from "@mui/material";
+import Autocomplete from "@mui/material/Autocomplete";
 
 function index({
   setFieldValue,
-  input: { type, label, options, name },
+  input: { type, label, options, name, note },
   handleChange,
+  helperText,
+  value,
   ...rest
 }) {
   let inputElement = null;
 
   switch (type) {
     case "text":
-      inputElement = <TextField {...rest} />;
+      inputElement = <TextField helperText={helperText} {...rest} />;
       break;
     case "number":
-      inputElement = <TextField {...rest} />;
+      inputElement = <TextField helperText={helperText} {...rest} />;
       break;
     case "select":
       inputElement = (
@@ -39,30 +42,43 @@ function index({
                 <MenuItem value={option.value}>{option.label}</MenuItem>
               ))}
             </Select>
-            <FormHelperText>{rest.helperText}</FormHelperText>
+            <FormHelperText>{helperText}</FormHelperText>
           </FormControl>
         </>
       );
       break;
     case "multiSelect":
+      console.log(rest);
       inputElement = (
         <FormControl error={rest.error}>
-          <InputLabel id="demo-simple-select-label">{label}</InputLabel>
-          <Select
-            sx={{ textAlign: "left" }}
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
+          <Autocomplete
+            value={value}
             multiple
-            {...rest}
-            onChange={(event) => {
-              setFieldValue(name, event.target.value);
+            id="tags-outlined"
+            options={options}
+            getOptionLabel={(option) => option.label}
+            defaultValue={[]}
+            error={true}
+            filterSelectedOptions
+            renderInput={(params) => {
+              return (
+                <TextField
+                  {...params}
+                  value={rest.value}
+                  error={rest.error}
+                  variant="outlined"
+                  label={label}
+                  placeholder={`Add ${label}`}
+                />
+              );
             }}
-          >
-            {options.map((option) => (
-              <MenuItem value={option.value}>{option.label}</MenuItem>
-            ))}
-          </Select>
-          <FormHelperText>{rest.helperText}</FormHelperText>
+            onChange={(e, value) => {
+              setFieldValue(name, value);
+            }}
+          />
+          {(note || helperText) && (
+            <FormHelperText>{helperText ? helperText : note}</FormHelperText>
+          )}
         </FormControl>
       );
       break;

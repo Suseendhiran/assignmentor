@@ -54,10 +54,14 @@ function Index() {
     },
   ];
   const handleSubmit = (values, resetForm) => {
+    const payload = {
+      ...values,
+      skills: values.skills.map((skill) => skill.value),
+    };
     setLoading(true);
     axios
       .post("/mentors/addmentor", {
-        ...values,
+        ...payload,
       })
       .then((res) => {
         setLoading(false);
@@ -80,6 +84,7 @@ function Index() {
       }}
       validationSchema={addMentorSchema}
       onSubmit={(values, { resetForm }) => {
+        console.log("valuesfinal", values);
         handleSubmit(values, resetForm);
       }}
     >
