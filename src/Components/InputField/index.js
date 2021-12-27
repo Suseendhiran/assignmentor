@@ -19,10 +19,14 @@ function index({
 
   switch (type) {
     case "text":
-      inputElement = <TextField helperText={helperText} {...rest} />;
+      inputElement = (
+        <TextField value={value} helperText={helperText} {...rest} />
+      );
       break;
     case "number":
-      inputElement = <TextField helperText={helperText} {...rest} />;
+      inputElement = (
+        <TextField value={value} helperText={helperText} {...rest} />
+      );
       break;
     case "select":
       inputElement = (
@@ -30,6 +34,7 @@ function index({
           <FormControl error={rest.error}>
             <InputLabel id="demo-simple-select-label">{label}</InputLabel>
             <Select
+              value={value}
               sx={{ textAlign: "left" }}
               labelId="demo-simple-select-label"
               id="demo-simple-select"
