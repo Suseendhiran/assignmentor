@@ -7,6 +7,9 @@ body {
   box-sizing: content-box;
   width: 100%;
   position: relative;
+  font-family: "Mohave", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .App {
@@ -147,6 +150,30 @@ body {
 .router {
   min-width: 100vw;
 }
+.aboutContainer {
+  padding-top: 120px;
+  padding-left: 30px;
+}
+.aboutHead {
+  text-align: left;
+  /* font-size: 24px; */
+}
+.aboutPara {
+  font-size: 24px;
+  text-align: left;
+  font-weight: 600;
+}
+.functions {
+  font-size: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.functions a {
+  text-decoration: none;
+  color: black;
+}
 
 @media (max-width: 600px) {
   .formContainer {
@@ -168,5 +195,28 @@ body {
   .headerContainer a {
     font-size: 10px;
     padding: 5px;
+  }
+  .aboutHead {
+    text-align: left;
+    font-size: 24px;
+  }
+  .aboutPara {
+    font-size: 18px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .functions {
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .functions a {
+    text-decoration: none;
+    color: black;
+  }
+  .aboutContainer {
+    padding-top: 60px;
   }
 }

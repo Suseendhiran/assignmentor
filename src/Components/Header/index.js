@@ -4,6 +4,7 @@ import AppBar from "@mui/material/AppBar";
 
 function index() {
   const links = [
+    { path: "", title: "About" },
     { path: "addmentor", title: "Add Mentor" },
     { path: "addstudent", title: "Add student" },
     { path: "addupdatestudentmentor", title: "Assign Mentor" },

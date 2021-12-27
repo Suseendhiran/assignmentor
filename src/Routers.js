@@ -4,11 +4,13 @@ import AddStudent from "./Components/AddStudent";
 import AddMentor from "./Components/AddMentor";
 import AddUpdateStudentMentor from "./Components/AddUpdateStudentMentor";
 import AddStudentsToMentor from "./Components/AddStudentsToMentor";
+import About from "./Components/About";
 
 function Routers() {
   return (
     <Router className="router">
-      <Redirect from="/" to="/addmentor" />
+      <About path="/" />
+      {/* <Redirect from="/" to="/addmentor" /> */}
       <AddStudent path="/addstudent" />
       <AddMentor path="/addmentor" />
       <AddUpdateStudentMentor path="/addupdatestudentmentor" />
