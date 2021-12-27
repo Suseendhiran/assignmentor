@@ -173,6 +173,7 @@ body {
 .functions a {
   text-decoration: none;
   color: black;
+  width: fit-content;
 }
 
 @media (max-width: 600px) {
